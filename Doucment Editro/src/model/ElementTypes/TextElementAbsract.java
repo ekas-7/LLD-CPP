@@ -2,10 +2,10 @@ package model.ElementTypes;
 
 import model.Constants.ElementType;
 
-public class TextElement extends DocumentElement {
+public class TextElementAbsract extends AbsractDocumentElement {
     private final String text;
 
-    public TextElement(String text) {
+    public TextElementAbsract(String text) {
         super(ElementType.TEXT);
         this.text = text;
     }

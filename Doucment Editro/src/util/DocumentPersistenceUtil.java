@@ -1,9 +1,9 @@
 package util;
 
 import model.Constants.ElementType;
-import model.ElementTypes.DocumentElement;
-import model.ElementTypes.ImageElement;
-import model.ElementTypes.TextElement;
+import model.ElementTypes.AbsractDocumentElement;
+import model.ElementTypes.ImageElementAbsract;
+import model.ElementTypes.TextElementAbsract;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,14 +14,14 @@ public final class DocumentPersistenceUtil {
     private DocumentPersistenceUtil() {
     }
 
-    public static void saveToFile(String filePath, List<DocumentElement> elements) throws IOException {
+    public static void saveToFile(String filePath, List<AbsractDocumentElement> elements) throws IOException {
         StringBuilder content = new StringBuilder();
-        for (DocumentElement element : elements) {
+        for (AbsractDocumentElement element : elements) {
             if (element.getType() == ElementType.TEXT) {
-                TextElement textElement = (TextElement) element;
+                TextElementAbsract textElement = (TextElementAbsract) element;
                 content.append("Text: ").append(textElement.getText());
             } else if (element.getType() == ElementType.IMAGE) {
-                ImageElement imageElement = (ImageElement) element;
+                ImageElementAbsract imageElement = (ImageElementAbsract) element;
                 content.append("Image: ").append(imageElement.getImageUrl());
             }
             content.append(System.lineSeparator());
@@ -29,22 +29,22 @@ public final class DocumentPersistenceUtil {
         Files.writeString(Path.of(filePath), content.toString());
     }
 
-    public static void saveToJson(String filePath, List<DocumentElement> elements) throws IOException {
+    public static void saveToJson(String filePath, List<AbsractDocumentElement> elements) throws IOException {
         StringBuilder json = new StringBuilder();
         json.append("{\"elements\":[");
         for (int i = 0; i < elements.size(); i++) {
-            DocumentElement element = elements.get(i);
+            AbsractDocumentElement element = elements.get(i);
             if (i > 0) {
                 json.append(",");
             }
 
             if (element.getType() == ElementType.TEXT) {
-                TextElement textElement = (TextElement) element;
+                TextElementAbsract textElement = (TextElementAbsract) element;
                 json.append("{\"type\":\"TEXT\",\"text\":\"")
                         .append(escapeJson(textElement.getText()))
                         .append("\"}");
             } else if (element.getType() == ElementType.IMAGE) {
-                ImageElement imageElement = (ImageElement) element;
+                ImageElementAbsract imageElement = (ImageElementAbsract) element;
                 json.append("{\"type\":\"IMAGE\",\"imageUrl\":\"")
                         .append(escapeJson(imageElement.getImageUrl()))
                         .append("\"}");

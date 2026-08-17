@@ -2,10 +2,10 @@ package model.ElementTypes;
 
 import model.Constants.ElementType;
 
-public abstract class DocumentElement {
+public abstract class AbsractDocumentElement {
     private final ElementType type;
 
-    protected DocumentElement(ElementType type) {
+    protected AbsractDocumentElement(ElementType type) {
         this.type = type;
     }
 
