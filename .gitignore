@@ -1,40 +1,24 @@
-# Build directories
-build/
-cmake-build-*/
-out/
+# macOS
+.DS_Store
 
-# Compiled binaries
-document_editor
-LLD_CPP
-*.exe
-*.out
-*.app
-
-# Object files
-*.o
-*.obj
-*.lo
-*.slo
-
-# CMake
-CMakeCache.txt
-CMakeFiles/
-cmake_install.cmake
-Makefile
-compile_commands.json
-
-# IDE
+# IDE/editor
 .idea/
 .vscode/
+*.iml
 *.swp
 *.swo
 *~
 
-# macOS
-.DS_Store
+# Java build outputs
+*.class
+*.jar
+*.war
+*.ear
+out/
+build/
+target/
+bin/
 
-# Debug / release artifacts
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Generated runtime files
+document.txt
+document.json
