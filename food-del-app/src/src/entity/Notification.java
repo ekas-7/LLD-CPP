@@ -9,6 +9,13 @@ public class Notification {
     private String message;
     private OrderType orderType;
 
+    public Notification(String notificationId, String message, OrderType orderType, EventType eventType) {
+        this.notificationId = notificationId;
+        this.message = message;
+        this.orderType = orderType;
+        this.eventType = eventType;
+    }
+
     public String getNotificationId() {
         return notificationId;
     }
