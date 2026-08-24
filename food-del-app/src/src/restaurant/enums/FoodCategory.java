@@ -1,4 +1,4 @@
-package entity.enums;
+package restaurant.enums;
 
 public enum FoodCategory {
     VEG,

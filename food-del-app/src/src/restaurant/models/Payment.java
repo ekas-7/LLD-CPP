@@ -1,6 +1,6 @@
-package entity;
+package restaurant.models;
 
-import entity.enums.PaymentMethod;
+import restaurant.enums.PaymentMethod;
 
 public class Payment {
     private String id;
@@ -15,7 +15,6 @@ public class Payment {
         this.paymentMethod = paymentMethod;
     }
 
-    // Getters and setters
     public String getId() {
         return id;
     }

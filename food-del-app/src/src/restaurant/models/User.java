@@ -1,23 +1,22 @@
-package entity;
+package restaurant.models;
 
 public class User {
     private String id;
     private String name;
     private String email;
     private String password;
-    private String Address;
+    private String address;
     private String pinCode;
 
-    public User(String id, String name, String email, String password, String Address, String pinCode) {
+    public User(String id, String name, String email, String password, String address, String pinCode) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.Address = Address;
+        this.address = address;
         this.pinCode = pinCode;
     }
 
-    // Getters and setters
     public String getId() {
         return id;
     }
@@ -51,11 +50,11 @@ public class User {
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
-    public void setAddress(String Address) {
-        this.Address = Address;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getPinCode() {
@@ -65,5 +64,4 @@ public class User {
     public void setPinCode(String pinCode) {
         this.pinCode = pinCode;
     }
-
 }

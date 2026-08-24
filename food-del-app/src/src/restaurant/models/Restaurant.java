@@ -1,4 +1,4 @@
-package entity;
+package restaurant.models;
 
 public class Restaurant {
     private String id;
@@ -6,16 +6,19 @@ public class Restaurant {
     private String address;
     private String phoneNumber;
     private Integer pinCode;
+    private String cuisine;
+    private double rating;
 
-    public Restaurant(String id, String name, String address, String phoneNumber, Integer pinCode) {
+    public Restaurant(String id, String name, String address, String phoneNumber, Integer pinCode, String cuisine, double rating) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.pinCode = pinCode;
+        this.cuisine = cuisine;
+        this.rating = rating;
     }
 
-    // Getters and setters
     public String getId() {
         return id;
     }
@@ -54,5 +57,21 @@ public class Restaurant {
 
     public void setPinCode(Integer pinCode) {
         this.pinCode = pinCode;
+    }
+
+    public String getCuisine() {
+        return cuisine;
+    }
+
+    public void setCuisine(String cuisine) {
+        this.cuisine = cuisine;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 }

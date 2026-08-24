@@ -1,24 +1,36 @@
-package entity;
+package restaurant.models;
 
-import entity.enums.FoodCategory;
+import restaurant.enums.FoodCategory;
 
-public class FoodItem {
+public class MenuItem {
     private String id;
+    private String restaurantId;
     private String name;
     private double price;
     private FoodCategory category;
 
-    public FoodItem(String id, String name, double price, FoodCategory category) {
+    public MenuItem(String id, String restaurantId, String name, double price, FoodCategory category) {
         this.id = id;
+        this.restaurantId = restaurantId;
         this.name = name;
         this.price = price;
         this.category = category;
     }
 
-    // Getters and setters
     public String getId() {
         return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(String restaurantId) {
+        this.restaurantId = restaurantId;
     }
 
     public String getName() {
@@ -43,9 +55,5 @@ public class FoodItem {
 
     public void setCategory(FoodCategory category) {
         this.category = category;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 }

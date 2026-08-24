@@ -1,13 +1,13 @@
-package entity;
+package restaurant.models;
 
-import entity.enums.EventType;
-import entity.enums.OrderType;
-
+import restaurant.enums.EventType;
+import restaurant.enums.OrderType;
 
 public class Notification {
     private String notificationId;
     private String message;
     private OrderType orderType;
+    private EventType eventType;
 
     public Notification(String notificationId, String message, OrderType orderType, EventType eventType) {
         this.notificationId = notificationId;
@@ -47,6 +47,4 @@ public class Notification {
     public void setEventType(EventType eventType) {
         this.eventType = eventType;
     }
-
-    private EventType eventType;
 }
